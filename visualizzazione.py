@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title="Pronostici Follower", page_icon="📱", layout="centered")
 
 # Parametri nascosti per admin (per futura personalizzazione)
-params = st.experimental_get_query_params()
+params = st.query_params
 admin_mode = params.get("admin", ["false"])[0].lower() == "true"
 
 # Sezione grafica personalizzabile solo per te
@@ -15,12 +15,12 @@ if admin_mode:
     titolo = st.text_input("🖋️ Titolo Personalizzato", "📋 Pronostici – Solo Visualizzazione")
 else:
     colore = "#0F8CFF"
-    titolo = "📋 Pronostici – Solo Visualizzazione"
+    titolo = "📋 Pronostici Sportivi"
 
 # Stile responsivo
 st.markdown(f"""
     <h1 style='text-align: center; color: {colore};'>{titolo}</h1>
-    <p style='text-align: center; font-size:18px;'>Aggiornato automaticamente dalla versione admin</p>
+   
 """, unsafe_allow_html=True)
 
 FILE = "pronostici.csv"
