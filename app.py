@@ -107,14 +107,12 @@ if sessione.loggato:
             st.success("Pronostico eliminato")
 
     # NUOVO PULSANTE: Sincronizza con GitHub
-    if st.button("Sincronizza su GitHub"):
-        try:
-            subprocess.run(["git", "add", "pronostici.csv"], check=True)
-            subprocess.run(["git", "commit", "-m", "Aggiornamento automatico da app admin"], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
-            st.success("Sincronizzazione completata con successo.")
-        except subprocess.CalledProcessError:
-            st.error("Errore durante la sincronizzazione con GitHub.")
+if st.button("Sincronizza su GitHub"):
+    result = os.system("sync_github.bat")
+    if result == 0:
+        st.success("Sincronizzazione avviata! Controlla il terminale.")
+    else:
+        st.warning("Controlla se il file .bat funziona correttamente.")
 
     if st.button("Logout"):
         sessione.loggato = False
