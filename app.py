@@ -106,7 +106,7 @@ if sessione.loggato:
             salva_pronostici(df)
             st.success("Pronostico eliminato")
 
-    # NUOVO PULSANTE: Sincronizza con GitHub
+# NUOVO PULSANTE: Sincronizza con GitHub
 if st.button("Sincronizza su GitHub"):
     result = os.system("sync_github.bat")
     if result == 0:
