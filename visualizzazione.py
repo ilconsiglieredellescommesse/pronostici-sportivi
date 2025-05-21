@@ -34,3 +34,11 @@ if os.path.exists(FILE):
         st.info("Nessun pronostico disponibile.")
 else:
     st.warning("Il file pronostici.csv non è stato trovato.")
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
