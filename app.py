@@ -110,9 +110,10 @@ if sessione.loggato:
 if st.button("Sincronizza su GitHub"):
     result = os.system("sync_github.bat")
     if result == 0:
-        st.success("Sincronizzazione avviata! Controlla il terminale.")
+        st.success("Sincronizzazione completata con successo.")
     else:
-        st.warning("Controlla se il file .bat funziona correttamente.")
+        st.error("Errore durante la sincronizzazione con GitHub.")
+
 
     if st.button("Logout"):
         sessione.loggato = False
