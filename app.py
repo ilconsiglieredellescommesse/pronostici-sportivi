@@ -114,7 +114,6 @@ if st.button("Sincronizza su GitHub"):
     else:
         st.error("Errore durante la sincronizzazione con GitHub.")
 
-
     if st.button("Logout"):
         sessione.loggato = False
         st.rerun()
